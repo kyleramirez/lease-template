@@ -4,7 +4,7 @@ $rentalutions: "Rentalutions";
   src: url('type/Rentalutions.ttf') format('truetype');
 }
 .rentalutions {
-  font-family:"Rentalutions";
+  font-family:$rentalutions;
 }
 .rentalutions.logotype:before {
   content:"\e800";

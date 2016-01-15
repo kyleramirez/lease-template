@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         watch: {
             compass: {
                 files: ['scss/**/*'],
-                tasks: ['compass:prod']
+                tasks: ['compass:prod','exec:print_pdf']
             },
 
             html: {

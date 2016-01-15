@@ -3,3 +3,6 @@ $carnevalee: "rhumbascript";
   font-family:"rhumbascript";
   src: url('type/RhumbaScriptNF.ttf') format('truetype');
 }
+.rhumbascript {
+  font-family:$carnevalee;
+}

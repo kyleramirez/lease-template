@@ -1,5 +1,11 @@
 $carnevalee: "carnevalee-freakshow";
 @font-face {
   font-family:"carnevalee-freakshow";
-  src: url('type/CarneValee Freakshow.ttf') format('truetype');
+  src: url('type/Carnevalee Freakshow.ttf') format('truetype');
+}
+.carnevalee {
+  font-family:$carnevalee;
+  &.decorative {
+    text-shadow:2px 2px 0 rgb(238,238,238) , 4px 4px 0 rgb(112,112,112);
+  }
 }
