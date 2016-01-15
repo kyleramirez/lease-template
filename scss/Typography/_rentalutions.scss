@@ -1,0 +1,11 @@
+$rentalutions: "Rentalutions";
+@font-face {
+  font-family:"Rentalutions";
+  src: url('type/Rentalutions.ttf') format('truetype');
+}
+.rentalutions {
+  font-family:"Rentalutions";
+}
+.rentalutions.logotype:before {
+  content:"\e800";
+}

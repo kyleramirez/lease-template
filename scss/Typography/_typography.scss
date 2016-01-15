@@ -1,0 +1,39 @@
+@import 'freight-text',
+      'rentalutions',
+      'carnevalee',
+      'rhumbascript';
+
+
+body {
+  font-family:$freight-text;
+  font-size:12pt;
+  line-height:18pt;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow:hidden;
+}
+h1 {
+  font-size:60pt;
+  line-height:60pt;
+}
+h2 {
+  font-size:48pt;
+  line-height:48pt;
+}
+h3 {
+  font-size:36pt;
+  line-height:36pt;
+}
+h4 {
+  font-size:24pt;
+  line-height:24pt;
+}
+h5 {
+  font-size:18pt;
+  line-height:18pt;
+}
+h6 {
+  font-size:12pt;
+  line-height:12pt;
+}
+h1,h2,h3,h4,h5,h6 { font-weight:300; font-style:normal; }
