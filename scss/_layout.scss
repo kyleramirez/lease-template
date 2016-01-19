@@ -1,1 +1,10 @@
 * { margin:0; padding:0; }
+p { page-break-inside: avoid;}
+table { border-spacing:0; }
+thead { display: table-header-group; }
+.columns-2 {
+  -webkit-column-count:2;
+}
+tr {
+  padding:72pt;
+}
