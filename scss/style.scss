@@ -1,4 +1,7 @@
-@import 'Typography/typography',
-      'layout',
-      'literals';
+@import 'variables',
+        'mixins',
+        'Typography/typography',
+        'Components/components',
+        'literals',
+        'layout';
 /* 612pt x 792pt = 8.5in x 11in */

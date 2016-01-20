@@ -1,0 +1,86 @@
+// Flat Color Scheme
+$flatRed      :#ff2d55; //Like red hot candy
+$flatOrange   :#eb974e;
+$flatYellow   :#f5d76e;
+$flatGreen    :#3cbc8d; //Like money
+$flatBlue     :#137bb5;
+$flatPurple   :#8c7be5;
+$flatBlack    :#404040;
+$offWhite     :#f1f1f1;
+$flatWhite    :#f9f9f9;
+$flatGray     :#bdc3c7; //Like concrete
+
+$colors-v-list: $flatRed $flatOrange $flatYellow $flatGreen $flatBlue $flatPurple $flatBlack $flatGray white $offWhite;
+$colors-list: 'red' 'orange' 'yellow' 'green' 'blue' 'purple' 'black' 'gray' 'whiter' 'white';
+
+//Body Background Color
+$bodyBgColor:white;
+$cardBodyBgColor:$offWhite;
+
+//Lighting
+$keyLight     :0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+
+// Typography
+$UISmallFont  :"Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+
+%ui-small {
+  font-family: $UISmallFont;
+  font-size:0.75em;
+  line-height:1.5em;
+}
+
+// sizing for media queries
+$small: 540px;
+$medium: 720px;
+$large: 1200px;
+
+%clear-fix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// McGriddle Settings
+$mcGriddle-config: (
+  columns: 12,
+  gutter: 20px,
+  fluidAt: sm,
+  gridPrefix: mcGrid,
+  columnPrefix: col-,
+  breakpoints: ( xs: 480px,
+                 sm: 768px,
+                 md: 992px,
+                 lg: 1200px,
+                 xl: 1600px ) );
+
+$numberOfColumns :map-get($mcGriddle-config,columns);
+$gridPadding     :map-get($mcGriddle-config,gutter);
+$breakpointXS    :map-get(map-get($mcGriddle-config,breakpoints),xs);
+$breakpointSm    :map-get(map-get($mcGriddle-config,breakpoints),sm);
+$breakpointMd    :map-get(map-get($mcGriddle-config,breakpoints),md);
+$breakpointLg    :map-get(map-get($mcGriddle-config,breakpoints),lg);
+$breakpointXL    :map-get(map-get($mcGriddle-config,breakpoints),xl);
+
+//Skeleton Settings
+$skeleton-config: (
+  columns: one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen,
+  gutter: 20px,
+  fluidAt: 768px,
+  breakpoints: 480px 768px 992px 1200px );
+$skeletonColumns: map-get($skeleton-config,columns);
+
+//############## Mega Menu Settings ##################
+//Mega Menu Condensed Mode
+$mmCondensedMode: $breakpointXS;
+//Mega Menu Hidden Mode
+$mmHiddenMode: $breakpointLg;
+//Mega Menu Width
+$mmWidth:300px;
+//Mega Menu--header Height
+$mhHeight:52px;
+//Mega Menu Brand Height
+$mbHeight:60px;
+//Mega Menu Brand Condensed Mode Height
+$mbHeightCondensedMode:40px;

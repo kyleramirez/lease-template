@@ -1,0 +1,65 @@
+/* Definition Lists!!!! */
+
+.dl--reset { dd { margin-left:0; } }
+
+dl {
+  &.dl--floated {
+    @extend .dl--reset;
+    @extend %clear-fix;
+    margin:0 auto;
+    dt {
+      float:left;
+      clear:both;
+      width:130px;
+      padding:10px 0 0 10px;
+      font-weight:bold;
+      //@media screen and (min-width:400px) { text-align:right; }
+    }
+    dd {
+      @extend %clear-fix;
+      padding:10px 10px 10px 150px;
+      text-align:right;
+      //@media screen and (min-width:400px) { text-align:left; }
+    }
+    dt,dd {
+      &:last-of-type {
+        margin-bottom:0;
+      }
+    }
+    &--striped {
+      @extend .dl--floated;
+      dd:nth-of-type(odd) { background-color:$offWhite; }
+    }
+  }
+  &.dl--dulce-form {
+    @extend .dl--floated;
+    dt {
+      width: 50%;
+      padding: 4px 0 0 0;
+      font-weight:normal;
+    }
+    dd {
+      padding: 0 0 10px 50%;
+      .dulce {
+        input, select, textarea {
+          margin-top:0;
+          text-align: right;
+        }
+        select {
+          direction: rtl;
+        }
+      }
+    }
+  }
+}
+
+dl.amenities,dl.utilities,dl.pets {
+  dt {
+    margin-bottom:10px;
+    text-align:center;
+  }
+  dd {
+    margin:0;
+    text-align:center;
+  }
+}

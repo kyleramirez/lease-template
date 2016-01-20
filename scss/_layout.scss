@@ -1,18 +1,82 @@
-p { page-break-inside: avoid;}
-table { border-spacing:0; }
-body { padding:0; margin:0; }
-li p {
-  text-align:justify;
+body {
+  padding:0;
   margin:0;
 }
-ol {
-  margin:0;
-  padding:0 24pt;
-  li + li {
-    padding-top:24pt;
+.container--compliant {
+  width:100%;
+}
+#lease {
+  position:relative;
+  @media only screen {
+    margin:24pt;
   }
 }
-th {
-  padding-left:24pt;
-  text-align:left;
+.lease-id {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+
+.lease-section {
+  width:100%;
+  border-spacing:0;
+
+  th {
+    /* Total Height: 22pt */
+    padding-bottom:6pt;
+    line-height:16pt;
+    font-size:16pt;
+    font-style:italic;
+    font-weight:300;
+    text-align:left;
+    border-bottom:1pt solid #404040;
+  }
+  td {
+    padding-top:6pt;
+    padding-bottom:24pt;
+  }
+  address {
+    font-style:normal;
+  }
+}
+
+.page-break {
+  display:block;
+  page-break-before:always;
+}
+
+.term-list {
+  margin:0;
+  padding:0 0 0 24pt;
+
+  li {
+    + li {
+      /* Accounting for the height of a header (22pt) and normal spacing below it (6pt) = 28pt */
+      padding-top:28pt;
+    }
+    p {
+      margin:0;
+      text-align:justify;
+      page-break-inside: avoid;
+    }
+  }
+}
+
+.grid-micro {
+  &, & > div {
+    box-sizing:border-box;
+    &:after {
+      content:'';
+      display:table;
+      clear:both;
+    }
+  }
+  > div { float:left; }
+  @for $i from 1 through 12 {
+    $percentage: (100% / 12) * $i;
+    .col-#{$i} {
+      width:$percentage;
+    }
+  }
 }

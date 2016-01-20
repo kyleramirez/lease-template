@@ -1,0 +1,153 @@
+//Prefixes
+//Keyframes
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+  @keyframes #{$name} { @content; } 
+}
+@mixin animation-delay($shorthand...) {
+          animation-delay: $shorthand;
+  -webkit-animation-delay: $shorthand;
+}
+//Transition
+@mixin transition($shorthand...) { transition: $shorthand; }
+@mixin transition-delay($shorthand...) { transition-delay: $shorthand; }
+//Transform
+@mixin transform($shorthand...) {
+  -webkit-transform: $shorthand;
+      -ms-transform: $shorthand;
+          transform: $shorthand;
+}
+@mixin transform-origin($shorthand...) {
+  -webkit-transform-origin: $shorthand;
+      -ms-transform-origin: $shorthand;
+          transform-origin: $shorthand;
+}
+//Animation
+@mixin animation($shorthand...) {
+  -webkit-animation: $shorthand;
+          animation: $shorthand;
+}
+
+//User Select
+@mixin noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+@mixin yesselect {
+  -webkit-touch-callout: default;
+    -webkit-user-select: all;
+       -moz-user-select: all;
+        -ms-user-select: all;
+            user-select: all;
+}
+@mixin selecttext {
+  -webkit-touch-callout: default;
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+}
+
+//HiDPI Screens
+@mixin hidpi {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
+  only screen and (-o-min-device-pixel-ratio: 13/10),
+  only screen and (min-resolution: 120dpi) {
+    @content
+  }
+}
+//IE9 only
+@mixin ie9 {
+  @media all and (min-width:0\0) and (min-resolution:.001dpcm) {
+    @content
+  }
+}
+
+// Grid Breakpoints -- currently based on McGriddle
+@mixin lg { //Large screens and above
+  @media only screen and (min-width: $breakpointMd) {
+    @content;
+  }
+}
+@mixin md-above { //Medium screens and above
+  @media only screen and (min-width: $breakpointSm) {
+    @content;
+  }
+}
+@mixin md { //Medium screens only
+  @media only screen and (min-width: $breakpointSm) and (max-width: #{$breakpointMd - 1px}) {
+    @content;
+  }
+}
+@mixin md-below { //Medium screens and below
+  @media only screen and (max-width: #{$breakpointMd - 1px}) {
+    @content;
+  }
+}
+@mixin sm-above { //Small screens and above
+  @media only screen and (min-width: $breakpointXS) {
+    @content;
+  }
+}
+@mixin sm { //Small screens only
+  @media only screen and (min-width: $breakpointXS) and (max-width: #{$breakpointSm - 1px}) {
+    @content;
+  }
+}
+@mixin sm-below { //Small screens and below
+  @media only screen and (max-width: #{$breakpointSm - 1px}) {
+    @content;
+  }
+}
+@mixin xs { //Smallest screens
+  @media only screen and (max-width: #{$breakpointXS - 1px}) {
+    @content;
+  }
+}
+
+//Functions
+
+//Content Aware
+@function background-aware($backgroundColor, $tolerance:50,$lightColor:white,$darkColor:$flatBlack) {
+  @if (lightness($backgroundColor) > $tolerance) {
+    @return $darkColor;
+  } @else {
+    @return $lightColor;
+  }
+}
+
+@mixin reset-text {
+  font-family: $UISmallFont;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.5em;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+@mixin on-fluid {
+  @media screen and ( max-width:#{map-get(map-get($mcGriddle-config,breakpoints),map-get($mcGriddle-config,fluidAt)) - 1} ) { //When McGriddle becomes fluid
+    $gridPrefix: map-get($mcGriddle-config,gridPrefix);
+    .#{$gridPrefix} & {
+      @content;
+    }
+  }
+  @media screen and ( max-width:#{map-get($skeleton-config,fluidAt) - 1} ) { //When Skeleton becomes fluid
+    .container &,
+    .container--compliant &,
+    .container--compliant--magic-sidebar & {
+      @content;
+    }
+  }
+}

@@ -8,6 +8,60 @@
    .italic { font-weight:italic; }
    .normal { font-weight:normal; }
 
+//Color
+.header-red,
+.red { color:$flatRed; }
+.header-orange,
+.orange { color:$flatOrange; }
+.header-yellow,
+.yellow { color:$flatYellow; }
+.header-green,
+.green { color:$flatGreen; }
+.header-blue,
+.blue { color:$flatBlue; }
+.header-purple,
+.purple { color:$flatPurple; }
+.header-black,
+.black { color:$flatBlack; }
+.header-white,
+.white { color:white; }
+.header-gray,
+.gray { color:$flatGray; }
+
+.bg-red { 
+ background-color:$flatRed;
+ &-light { background-color:lighten(rgba(100,18,33,.1),15%) } 
+}
+.bg-orange { 
+ background-color:$flatOrange; 
+ &-light { background-color:lighten(rgba(92,59,31,.1),15%); } 
+}
+.bg-yellow { 
+ background-color:$flatYellow; 
+ &-light { background-color:lighten(rgba(96,84,43,.1),15%); } 
+}
+.bg-green { 
+ background-color:$flatGreen; 
+ &-light { background-color:lighten(rgba(24,74,55,.1),15%); } 
+}
+.bg-blue { 
+ background-color:$flatBlue; 
+ &-light { background-color:lighten(rgba(7,48,71,.1),15%); } 
+}
+.bg-purple { 
+ background-color:$flatPurple; 
+ &-light { background-color:lighten(rgba(55,48,90,.1),15%); } 
+}
+.bg-black { 
+ background-color:$flatBlack; 
+}
+.bg-white { 
+ background-color:white; 
+}
+.bg-gray { 
+ background-color:$flatGray;
+}
+
 //Spacing
 .margin- {
   &0p5 {
