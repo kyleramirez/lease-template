@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
         exec: {
             print_pdf: {
-              cmd: "wkhtmltopdf -B 0 -L 0 -R 0 -T 0 --page-width 612pt --page-height 792pt lease-template.html  lease.pdf",
+              cmd: 'wkhtmltopdf -B 48pt -L 24pt -R 24pt -T 24pt --page-width 612pt --page-height 792pt --footer-html lease-footer.html lease-template.html  lease.pdf',
               stdout: false,
               stderr: false
             }

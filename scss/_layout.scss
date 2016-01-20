@@ -1,10 +1,18 @@
-* { margin:0; padding:0; }
 p { page-break-inside: avoid;}
 table { border-spacing:0; }
-thead { display: table-header-group; }
-.columns-2 {
-  -webkit-column-count:2;
+body { padding:0; margin:0; }
+li p {
+  text-align:justify;
+  margin:0;
 }
-tr {
-  padding:72pt;
+ol {
+  margin:0;
+  padding:0 24pt;
+  li + li {
+    padding-top:24pt;
+  }
+}
+th {
+  padding-left:24pt;
+  text-align:left;
 }
