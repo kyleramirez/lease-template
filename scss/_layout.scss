@@ -2,9 +2,19 @@ body {
   padding:0;
   margin:0;
 }
-.container--compliant {
-  width:100%;
+.list-reset {
+  margin:0;
+  padding:0;
+  list-style:none;
+
+  &--inline {
+    @extend .list-reset;
+    li {
+      display:inline;
+    }
+  }
 }
+
 #lease {
   position:relative;
   @media only screen {
@@ -12,7 +22,8 @@ body {
   }
 }
 .lease-id {
-  position: absolute;
+  position:absolute;
+  @media only screen and (max-width:350px) { position:static; br { display:none; } }
   right: 0;
   top: 0;
   text-align: center;
@@ -21,6 +32,7 @@ body {
 .lease-section {
   width:100%;
   border-spacing:0;
+  page-break-inside:avoid;
 
   th {
     /* Total Height: 22pt */
@@ -39,6 +51,14 @@ body {
   address {
     font-style:normal;
   }
+
+  ol.header-space li, ul.header-space li {
+    + li {
+      /* Accounting for the height of a header (22pt) and normal spacing below it (6pt) = 28pt */
+      padding-top:12pt;
+      @media only print { padding-top:28pt; }
+    }
+  }
 }
 
 .page-break {
@@ -50,17 +70,31 @@ body {
   margin:0;
   padding:0 0 0 24pt;
 
-  li {
-    + li {
-      /* Accounting for the height of a header (22pt) and normal spacing below it (6pt) = 28pt */
-      padding-top:28pt;
-    }
-    p {
-      margin:0;
-      text-align:justify;
-      page-break-inside: avoid;
-    }
+  p {
+    margin:0;
+    text-align:justify;
+    page-break-inside: avoid;
   }
+}
+
+dl.lessee,dl.lessor {
+  border-radius:3px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+     word-break: break-all;
+     word-break: break-word;
+
+  + #{&} {
+    margin-top:28pt;
+  }
+
+  dt { width:80px; }
+  dd { padding-left:100px; }
+  dd + dt + dd { border-top:1px dotted $flatGray; }
+
+  background-color:$offWhite;
+  page-break-inside:avoid;
 }
 
 .grid-micro {

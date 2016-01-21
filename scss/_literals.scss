@@ -28,37 +28,40 @@
 .header-gray,
 .gray { color:$flatGray; }
 
-.bg-red { 
+.bg-red {
  background-color:$flatRed;
- &-light { background-color:lighten(rgba(100,18,33,.1),15%) } 
+ &-light { background-color:lighten(rgba(100,18,33,.1),15%) }
 }
-.bg-orange { 
- background-color:$flatOrange; 
- &-light { background-color:lighten(rgba(92,59,31,.1),15%); } 
+.bg-orange {
+ background-color:$flatOrange;
+ &-light { background-color:lighten(rgba(92,59,31,.1),15%); }
 }
-.bg-yellow { 
- background-color:$flatYellow; 
- &-light { background-color:lighten(rgba(96,84,43,.1),15%); } 
+.bg-yellow {
+ background-color:$flatYellow;
+ &-light { background-color:lighten(rgba(96,84,43,.1),15%); }
 }
-.bg-green { 
- background-color:$flatGreen; 
- &-light { background-color:lighten(rgba(24,74,55,.1),15%); } 
+.bg-green {
+ background-color:$flatGreen;
+ &-light { background-color:lighten(rgba(24,74,55,.1),15%); }
 }
-.bg-blue { 
- background-color:$flatBlue; 
- &-light { background-color:lighten(rgba(7,48,71,.1),15%); } 
+.bg-blue {
+ background-color:$flatBlue;
+ &-light { background-color:lighten(rgba(7,48,71,.1),15%); }
 }
-.bg-purple { 
- background-color:$flatPurple; 
- &-light { background-color:lighten(rgba(55,48,90,.1),15%); } 
+.bg-purple {
+ background-color:$flatPurple;
+ &-light { background-color:lighten(rgba(55,48,90,.1),15%); }
 }
-.bg-black { 
- background-color:$flatBlack; 
+.bg-black {
+ background-color:$flatBlack;
 }
-.bg-white { 
- background-color:white; 
+.bg-white {
+ background-color:white;
 }
-.bg-gray { 
+.bg-offwhite {
+  background-color:$offWhite;
+}
+.bg-gray {
  background-color:$flatGray;
 }
 
